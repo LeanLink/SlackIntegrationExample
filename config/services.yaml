@@ -23,3 +23,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+    GuzzleHttp\Client: ~
+    App\Controller\DefaultController:
+        autowire: true
+        arguments:
+            $slackUrl: '%env(SLACK_URL)%'
+            $leanlinkApiSecret: '%env(LEANLINK_API_SECRET)%'
